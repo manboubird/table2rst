@@ -1,3 +1,4 @@
+{% macro display_list_table(rows) -%}
 .. list-table:: 
    :header-rows: 1
 {%- for row in rows %}
@@ -5,3 +6,5 @@
    {% if loop.first -%}*{% else %} {% endif %} - {{ col }} 
   {%- endfor %}
 {%- endfor %}
+{%- endmacro %}
+

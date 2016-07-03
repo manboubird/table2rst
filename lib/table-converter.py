@@ -20,17 +20,6 @@ def get_rows(df, start_idx=0):
   return rows
 
 
-def display_rst_list_table(rows):
-  tpl = env.get_template('rst/list-table.tpl')
-  return tpl.render({'rows': rows})
-
-def get_template_env():
-  env = Environment(loader=FileSystemLoader('./lib/template', encoding='utf8'))
-  env.globals['display_rst_list_table'] = display_rst_list_table
-  return env
-
-env = get_template_env()
-
 file = "data/test.csv"
 # df = pd.ExcelFile(file).parse(sheet)
 df = pd.read_csv(file, header=None, encoding="utf-8") 
@@ -38,7 +27,8 @@ start_idx = 36
 rows = get_rows(df, start_idx)
 
 
-tpl = env.get_template('table.rst.tpl')
+tpl_env = Environment(loader=FileSystemLoader('./lib/template', encoding='utf8'))
+tpl = tpl_env.get_template('table.rst.tpl')
 rst = tpl.render({'title': file, 'tables': [ rows, rows ]})
 print rst.encode('utf-8')
 
