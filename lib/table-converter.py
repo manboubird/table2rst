@@ -13,7 +13,7 @@ def get_rows(df, start_idx=0):
   rows = []
   while len(non_na_cnt) > 0:
     idx += 1
-    display_row = cur.fillna('').values
+    display_row = cur.fillna('').str.replace('\n', '').values
     rows.append(display_row)
     cur = df.iloc[idx]
     non_na_cnt = cur.dropna()
