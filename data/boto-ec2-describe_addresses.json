@@ -1,0 +1,25 @@
+{
+    "Addresses": [
+        {
+            "InstanceId": "string",
+            "PublicIp": "1.1.1.1",
+            "AllocationId": "string",
+            "AssociationId": "string",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "string",
+            "NetworkInterfaceOwnerId": "string",
+            "PrivateIpAddress": "string"
+        },
+        {
+            "InstanceId": "string",
+            "PublicIp": "2.2.2.2",
+            "AllocationId": "string",
+            "AssociationId": "string",
+            "Domain": "standard",
+            "NetworkInterfaceId": "string",
+            "NetworkInterfaceOwnerId": "string",
+            "PrivateIpAddress": "string"
+        }
+    ]
+}
+
